@@ -1,0 +1,13 @@
+{% extends 'home/core.html' %}
+{% block content %}
+                <h1>Welcome</h1>
+                <h2>The key to success</br>is to never give up</h2>
+                <hr>
+                <ul>
+                    {% for post in object_list %}
+		    <li><a href="{% url 'home:post' post.pk %}">{{ post.title }}</a>
+                        {{ post.pub_date }}
+                   </li>
+                    {% endfor %}
+
+{% endblock %}

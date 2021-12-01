@@ -1,0 +1,15 @@
+{% extends 'home/core.html' %}
+
+{% block content %}
+	<div>
+	<h1>{{ category.name }}</h1>
+	</div>
+	{% for post in object_list %}
+	<div>
+		<h3><a href="{% url 'home:post' post.pk%}">{{ post.title }}</a> </h3>
+	{% endfor %}
+
+	  <hr>
+                   <a href="{% url 'home:welcome'  %}"class="btn btn-primary">Back</a>
+
+{% endblock %}
